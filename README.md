@@ -1,24 +1,55 @@
-# README
+# DB 設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| email              | string              | null: false             |
+| password           | string              | null: false             |
+| name               | string              | null: false             |
+| profile            | text                | null: false             |
+| birthday           | string              | null: false             |
 
-* Ruby version
+### Association
 
-* System dependencies
+* has_many :items
+* has_many :orders
 
-* Configuration
+## items
 
-* Database creation
+| Column                              | Type       | Options           |
+|-------------------------------------|------------|-------------------|
+| title                               | string     | null: false       |
+| price                               | integer    | null: false       |
+| image                               | string     | null: false       |
+| user                                | references | foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_one :orders
 
-* Services (job queues, cache servers, search engines, etc.)
+## orders
 
-* Deployment instructions
+| Column      | Type       | Options           |
+|-------------|------------|-------------------|
+| card        | text       | null: false       |
+| user        | references | foreign_key: true |
 
-* ...
+### Association
+
+- belomgs_to :user
+- belongs_to :items
+- has_one :shared
+
+## shared
+
+| Column      | Type       | Options           |
+|-------------|------------|-------------------|
+| shipping    | integer    | null: false       |
+| user        | references | foreign_key: true |
+| addres      | text       | null: false       |
+
+### Association
+
+- belomgs_to :orders

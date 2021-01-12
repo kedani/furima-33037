@@ -22,12 +22,12 @@
 | Column                              | Type       | Options           |
 |-------------------------------------|------------|-------------------|
 | item_name                           | string     | null: false       |
-| item_info                           | string     | null: false       |
+| item_info                           | text       | null: false       |
 | item_category_id                    | integer    | null: false       |
-| item_sales-status_id                | integer    | null: false       |
-| item_shipping-fee-status_id         | integer    | null: false       |
+| item_sales_status_id                | integer    | null: false       |
+| item_shipping_fee_status_id         | integer    | null: false       |
 | item_prefecture_id                  | integer    | null: false       |
-| item_scheduled-delivery_id          | integer    | null: false       |
+| item_scheduled_delivery_id          | integer    | null: false       |
 | item_price                          | integer    | null: false       |
 | user                                | references | foreign_key: true |
 

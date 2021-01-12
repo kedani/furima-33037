@@ -2,16 +2,16 @@
 
 ## users table
 
-| Column             | Type                | Options                 |
-|--------------------|---------------------|-------------------------|
-| email              | string              | null: false             |
-| encrypted_password | string              | null: false             |
-| nickname           | string              | null: false             |
-| surname            | string              | null: false             |
-| first name         | string              | null: false             |
-| birthday           | date                | null: false             |
-| surname_kana       | string              | null: false             |
-| first name_kana    | string              | null: false             |
+| Column             | Type                | Options                  |
+|--------------------|---------------------|--------------------------|
+| email              | string              | null: false  unique: true|
+| encrypted_password | string              | null: false              |
+| nickname           | string              | null: false              |
+| surname            | string              | null: false              |
+| first name         | string              | null: false              |
+| birthday           | date                | null: false              |
+| surname_kana       | string              | null: false              |
+| first name_kana    | string              | null: false              |
 ### Association
 
 * has_many :items
@@ -63,4 +63,4 @@
 
 ### Association
 
-- belomgs_to :order
+- belongs_to :order

@@ -3,4 +3,7 @@ class ItemsController < ApplicationController
     #@items = Item.includes(:user)
   end
 
+  def create
+  end
+
 end

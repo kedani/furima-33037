@@ -11,7 +11,7 @@ class Item < ApplicationRecord
 
 
    validates :item_category_id, numericality: { other_than: 1 },presence: true 
-
+   validates :item_price, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is invalid"}
    with_options presence: true do
       validates :image
       validates :item_name

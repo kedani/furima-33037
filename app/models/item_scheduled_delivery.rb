@@ -1,6 +1,6 @@
 class ItemScheduledDelivery < ActiveHash::Base
   self.data = [
-    { id: 1, name: '--' },
+    { id: 1, name: '---' },
     { id: 2, name: '北海道' },
     { id: 3, name: '青森県' },
     { id: 4, name: '岩手県' },
@@ -36,7 +36,7 @@ class ItemScheduledDelivery < ActiveHash::Base
     { id: 34, name: '岡山県' },
     { id: 35, name: '広島県' },
     { id: 36, name: '山口県' },
-    { id: 37, name: '徳島県' }
+    { id: 37, name: '徳島県' },
     { id: 38, name: '香川県' },
     { id: 39, name: '愛媛県' },
     { id: 40, name: '高知県' },
@@ -49,4 +49,8 @@ class ItemScheduledDelivery < ActiveHash::Base
     { id: 47, name: '鹿児島県' },
     { id: 48, name: '沖縄県' }
   ]
+
+  include ActiveHash::Associations
+  has_many :items
+
   end

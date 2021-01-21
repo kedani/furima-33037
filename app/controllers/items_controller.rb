@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
      @items = Item.all
     # @items = []
     # @items = Item.includes(:user)
-    #@item = Item.order("created_at DESC")
+    @items = Item.order("created_at DESC")
   end
 
   def new

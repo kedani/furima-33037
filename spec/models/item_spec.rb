@@ -39,7 +39,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Item category is not a number", "Item category can't be blank")
     end
     it "item_category_idが1だと保存できない" do
-      @item.item_category_id = "1"
+      @item.item_category_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Item category must be other than 1")
     end
@@ -49,7 +49,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Item prefecture can't be blank")
     end
     it "item_prefecture_idが1だと保存できない" do
-      @item.item_prefecture_id = "1"
+      @item.item_prefecture_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Item prefecture must be other than 1")
     end
@@ -59,7 +59,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Item sales status can't be blank")
     end
     it "item_sales_status_idが1だと保存できない" do
-      @item.item_sales_status_id = "1"
+      @item.item_sales_status_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Item sales status must be other than 1")
     end
@@ -69,7 +69,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Item scheduled delivery can't be blank")
     end
     it "item_scheduled_delivery_idが1だと保存できない" do
-      @item.item_scheduled_delivery_id = "1"
+      @item.item_scheduled_delivery_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Item scheduled delivery must be other than 1")
     end
@@ -80,7 +80,7 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Item shipping fee status can't be blank")
     end
     it "item_shipping_fee_status_idが1だと保存できない" do
-      @item.item_shipping_fee_status_id = "1"
+      @item.item_shipping_fee_status_id = 1
       @item.valid?
       expect(@item.errors.full_messages).to include("Item shipping fee status must be other than 1")
     end

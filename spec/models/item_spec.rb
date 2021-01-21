@@ -91,12 +91,12 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Item price is invalid", "Item price can't be blank")
     end
     it "価格の範囲が300円以下だと保存できない" do
-      @item.item_price = 20
+      @item.item_price = 299
       @item.valid?
       expect(@item.errors.full_messages).to include("Item price is invalid")
     end
      it "価格の範囲が9999999円以上だと保存できない" do
-       @item.item_price = 11111111
+       @item.item_price = 10000000
        @item.valid?
        expect(@item.errors.full_messages).to include("Item price is invalid")
      end

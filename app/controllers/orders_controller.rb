@@ -10,9 +10,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  # def new
-
-  # end
 
   def create
     @order_shared = OrderShared.new(order_params)
@@ -27,7 +24,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    #binding.pry
     params.permit(:item_id,:postal_code,:item_prefecture_id,:city,:addresses,:building,:phone_number).merge(user_id: current_user.id,token: params[:token])
    end
 

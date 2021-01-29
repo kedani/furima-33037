@@ -31,9 +31,9 @@ RSpec.describe OrderShared, type: :model do
       end
 
       it "都道府県が1だと保存できない" do
-        @order_shared.prefecture_id = 1
+        @order_shared.item_prefecture_id = 1
         @order_shared.valid?
-        expect(@order_shared.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@order_shared.errors.full_messages).to include("Item prefecture can't be blank")
       end
 
       it "市町村がないと登録できない" do
@@ -81,6 +81,12 @@ RSpec.describe OrderShared, type: :model do
         expect(@order_shared.errors.full_messages).to include("Item can't be blank")
      end
 
+     it "tokenが空では登録できないこと" do
+      @order_shared.token = nil
+      @order_shared.valid?
+      expect(@order_shared.errors.full_messages).to include("Token can't be blank")
+     end
+    
     end
 
   end

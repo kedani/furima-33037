@@ -1,9 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
   before_action :order_index, only: [:index,:create]
 
   def index
     #@item = Item.find(params[:item_id,])
     @order_shared = OrderShared.new
+    if current_user == @item.user
+      redirect_to root_path
+    end
   end
 
   # def new

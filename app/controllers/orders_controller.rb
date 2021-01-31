@@ -4,10 +4,8 @@ class OrdersController < ApplicationController
 
   def index
     @order_shared = OrderShared.new
-    if current_user == @item.user
+    if current_user == @item.user || @item.order.present?
       redirect_to root_path
-    elsif @item.order.present?
-        redirect_to root_path
     end
   end
 
@@ -29,7 +27,7 @@ class OrdersController < ApplicationController
    end
 
    def order_index
-   @item = Item.find(params[:item_id,])
+   @item = Item.find(params[:item_id])
    end
 
    def pay_item

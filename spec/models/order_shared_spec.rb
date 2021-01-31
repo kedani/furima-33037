@@ -58,8 +58,8 @@ RSpec.describe OrderShared, type: :model do
         @order_shared.valid?
         expect(@order_shared.errors.full_messages).to include("Phone number is invalid")
       end
-      it "電話番号は11桁じゃないと保存できない" do
-        @order_shared.phone_number = 1234567890
+      it "電話番号は10桁か11桁じゃないと保存できない" do
+        @order_shared.phone_number = 123456789
         @order_shared.valid?
         expect(@order_shared.errors.full_messages).to include("Phone number is invalid")
       end

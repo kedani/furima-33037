@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
    end
    def root_jump
-    redirect_to root_path if @item.user_id != current_user.id
-   end
+    redirect_to root_path if @item.user_id != current_user.id || @item.order.present?
+  end
 end
 
